@@ -4,41 +4,45 @@ table#tlayout {
     border: none;
     border-collapse: separate;
     background: white;
-	width: 900px;
-	margin: auto;
-	align: center;
+    width: 900px;
+    margin: auto;
+    align: center;
 }
 
 body {
-	background: white;
-	font-family: Helvetica, serif;
-	font-size: 11pt;
-	padding-bottom: 8px;
-	margin: auto;
+    background: white;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: 11pt;
+    padding-bottom: 8px;
+    margin: auto;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 #layout-menu {
-	background: #f6f6f6;
-	border: 1px solid #dddddd;
-	padding-top: 0.5em;
-	padding-left: 8px;
-	padding-right: 8px;
-	font-size: 1.1em;
-	width: 15%;
-	white-space: nowrap;
+    background: #f1f8ff;
+    border: 1px solid #e1eaf1;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    font-size: 1.1em;
+    width: 15%;
+    white-space: nowrap;
     text-align: left;
     vertical-align: top;
 }
 
 #layout-menu td {
-	background: #f4f4f4;
+    background: #f4f4f4;
     vertical-align: top;
 }
 
 #layout-content {
-	padding-top: 0.0em;
-	padding-left: 1.0em;
-	padding-right: 1.0em;
+    padding-top: 0.5em;
+    padding-left: 2em;
+    padding-right: 1em;
+    padding-bottom: 1em;
     border: none;
     background: white;
     text-align: left;
@@ -46,8 +50,8 @@ body {
 }
 
 #layout-menu a {
-	line-height: 1.5em;
-	margin-left: 0.5em;
+    line-height: 1.5em;
+    margin-left: 0.5em;
 }
 
 tt {
@@ -55,88 +59,109 @@ tt {
 }
 
 pre, tt {
-	font-size: 90%;
-	font-family: monaco, monospace;
+    font-size: 90%;
+    font-family: monaco, monospace;
 }
 
 a, a > tt {
-	color: #224b8d;
-	text-decoration: none;
+    color: #224b8d;
+    text-decoration: none;
 }
 
 a:hover {
-	border-bottom: 1px gray dotted;
-}
-
-#layout-menu a.current:link, #layout-menu a.current:visited {
-	color: #022b6d;
-	border-bottom: 1px gray solid;
-}
-#layout-menu a:link, #layout-menu a:visited, #layout-menu a:hover {
-	color: #527bbd;
-	text-decoration: none;
-}
-#layout-menu a:hover {
-	text-decoration: none;
+    border-bottom: 1px gray dotted;
 }
 
 div.menu-category {
-	border-bottom: 1px solid gray;
-	margin-top: 0.8em;
-	padding-top: 0.2em;
-	padding-bottom: 0.1em;
-	font-weight: bold;
+    border-bottom: 1px solid gray;
+    margin-top: 0.8em;
+    padding-top: 0.2em;
+    padding-bottom: 0.1em;
+    font-weight: bold;
 }
 
-div.menu-item {
-	padding-left: 16px;
-	text-indent: -16px;
+/* 修复菜单项目样式：兼容jemdoc的text-indent列表结构，适配图标 */
+.menu-item {
+    padding: 6px 0;
+    margin: 4px 0;
+    transition: background-color 0.3s ease;
+    padding-left: 25px; /* 为图标和文字整体增加左侧内边距 */
+    text-indent: -12px; /* 修正文本缩进，使文字在图标后对齐 */
+}
+
+.menu-item a {
+    color: #2c5282;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.menu-item a.current {
+    color: #0275d8;
+    font-weight: 600;
+    border-bottom: 1px solid #0275d8;
+}
+
+.menu-item:hover {
+    background-color: #e1f0fa;
+}
+
+/* 菜单图标适配：调整图标与文字间距 */
+.menu-item i {
+    margin-right: 8px; /* 控制图标与文字的间距 */
 }
 
 div#toptitle {
-	padding-bottom: 0.2em;
-	margin-bottom: 1.5em;
-	border-bottom: 3px double gray;
+    padding-bottom: 0.2em;
+    margin-bottom: 1.5em;
+    border-bottom: 3px double gray;
 }
 
-/* Reduce space if we begin the page with a title. */
 div#toptitle + h2, div#toptitle + h3 {
-	margin-top: -0.7em;
+    margin-top: -0.7em;
 }
 
 div#subtitle {
-	margin-top: 0.0em;
-	margin-bottom: 0.0em;
-	padding-top: 0em;
-	padding-bottom: 0.1em;
+    margin-top: 0.0em;
+    margin-bottom: 0.0em;
+    padding-top: 0em;
+    padding-bottom: 0.1em;
 }
 
 em {
-	font-style: italic;
+    font-style: italic;
 }
 
 strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 
-
 h1, h2, h3 {
-	color: #527bbd;
-	margin-top: 0.7em;
-	margin-bottom: 0.3em;
-	padding-bottom: 0.2em;
-	line-height: 1.0;
-	padding-top: 0.5em;
-	border-bottom: 1px solid #aaaaaa;
+    color: #2c5282;
+    margin-top: 0.7em;
+    margin-bottom: 0.3em;
+    padding-bottom: 0.2em;
+    line-height: 1.0;
+    padding-top: 0.5em;
+    border-bottom: 1px solid #aaaaaa;
 }
 
 h1 {
-	font-size: 165%;
+    font-size: 165%;
 }
 
 h2 {
-	padding-top: 0.8em;
-	font-size: 125%;
+    font-size: 125%;
+    border-left: 4px solid #0275d8;
+    padding-left: 12px;
+    border-bottom: none;
+
+    /* 关键：纵向居中核心调整 */
+    padding-top: 4px;    /* 顶部内边距，抵消文字默认下沉 */
+    padding-bottom: 4px; /* 底部内边距，与顶部对称 */
+    line-height: 1.4;    /* 行高适配字体大小，避免文字上下偏移 */
+    margin-top: 0.8em;   /* 控制与上方元素（如h1）的间距，避免空隙过大 */
+    margin-bottom: 0.5em;/* 控制与下方内容的间距，保持紧凑感 */
+    height: auto;        /* 取消固定高度，让元素自适应文字大小 */
 }
 
 h2 + h3 {
@@ -144,199 +169,231 @@ h2 + h3 {
 }
 
 h3 {
-	font-size: 110%;
-	border-bottom: none;
+    font-size: 110%;
+    border-bottom: none;
 }
 
 p {
-	margin-top: 0.0em;
-	margin-bottom: 0.8em;
-	padding: 0;
-	line-height: 1.3;
+    margin-top: 0.0em;
+    margin-bottom: 0.8em;
+    padding: 0;
+    line-height: 1.3;
+    font-size: 1rem;
+    color: #444;
 }
 
 pre {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 div#footer {
-	font-size: small;
-	border-top: 1px solid #c0c0c0;
-	padding-top: 0.1em;
-	margin-top: 4.0em;
-	color: #c0c0c0;
+    font-size: small;
+    border-top: 1px solid #c0c0c0;
+    padding-top: 0.1em;
+    margin-top: 4.0em;
+    color: #c0c0c0;
+    text-align: right;
 }
 
 div#footer a {
-	color: #80a0b0;
+    color: #80a0b0;
 }
 
 div#footer-text {
-	float: left;
-	padding-bottom: 8px;
+    float: left;
+    padding-bottom: 8px;
 }
 
 ul, ol, dl {
-	margin-top: 0.2em;
-	padding-top: 0;
-	margin-bottom: 0.8em;
+    margin-top: 0.2em;
+    padding-top: 0;
+    margin-bottom: 0.8em;
 }
 
 dt {
-	margin-top: 0.5em;
-	margin-bottom: 0;
+    margin-top: 0.5em;
+    margin-bottom: 0;
 }
 
 dl {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 
 dd {
-	color: #222222;
+    color: #222222;
 }
 
 dd > *:first-child {
-	margin-top: 0;
+    margin-top: 0;
 }
 
 ul {
-	list-style-position: outside;
-	list-style-type: square;
+    list-style-position: outside;
+    list-style-type: square;
 }
 
 p + ul, p + ol {
-	margin-top: -0.5em;
+    margin-top: -0.5em;
 }
 
 li ul, li ol {
-	margin-top: -0.3em;
+    margin-top: -0.3em;
 }
 
 ol {
-	list-style-position: outside;
-	list-style-type: decimal;
+    list-style-position: outside;
+    list-style-type: decimal;
 }
 
 li p, dd p {
-	margin-bottom: 0.3em;
+    margin-bottom: 0.3em;
 }
 
-
 ol ol {
-	list-style-type: lower-alpha;
+    list-style-type: lower-alpha;
 }
 
 ol ol ol {
-	list-style-type: lower-roman;
+    list-style-type: lower-roman;
 }
 
 p + div.codeblock {
-	margin-top: -0.6em;
+    margin-top: -0.6em;
 }
 
 div.codeblock, div.infoblock {
-	margin-right: 0%;
-	margin-top: 1.2em;
-	margin-bottom: 1.3em;
+    margin-right: 0%;
+    margin-top: 1.2em;
+    margin-bottom: 1.3em;
 }
 
-div.blocktitle {
-	font-weight: bold;
-	color: #cd7b62;
-	margin-top: 1.2em;
-	margin-bottom: 0.1em;
+/* 信息块样式：修改为浅蓝色背景（核心修改部分） */
+.infoblock {
+    background-color: #f0f7ff; /* 很浅的蓝色背景，视觉柔和不刺眼 */
+    border: 1px solid #d1e0f0; /* 配套的浅蓝边框，增强层次感 */
+    border-radius: 8px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+/* 信息块内容区样式：保持与外层一致的浅蓝风格 */
+.infoblock .blockcontent {
+    background-color: #f0f7ff; /* 与外层infoblock背景色统一，避免嵌套色差 */
+    border: none; /* 取消原有银色边框，避免重复边框感 */
+    padding: 25px; /* 保留原有内边距，确保内容不拥挤 */
+}
+
+/*div.blocktitle {*/
+/*    font-weight: bold;*/
+/*    color: #cd7b62;*/
+/*    margin-top: 1.2em;*/
+/*    margin-bottom: 0.1em;*/
+
+/*}*/
+
+.blocktitle {
+    font-weight: 600;
+    /* 新增：设置文本居中 */
+    text-align: center;
+    /* 新增：增大字体大小，可根据需要调整数值 */
+    font-size: 1.5em;
+    padding: 12px 20px;
+    color: #2c5282;
+    background-color: #e6f2ff;
+    border-bottom: 1px solid #d1e0f0;
 }
 
 div.blockcontent {
-	border: 1px solid silver;
-	padding: 0.3em 0.5em;
+    border: 1px solid silver;
+    padding: 0.3em 0.5em;
 }
 
 div.infoblock > div.blockcontent {
-	background: #ffffee;
+    background: #fffff6;
 }
 
 div.blockcontent p + ul, div.blockcontent p + ol {
-	margin-top: 0.4em;
+    margin-top: 0.4em;
 }
 
 div.infoblock p {
-	margin-bottom: 0em;
+    margin-bottom: 0em;
 }
 
 div.infoblock li p, div.infoblock dd p {
-	margin-bottom: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 div.infoblock p + p {
-	margin-top: 0.8em;
+    margin-top: 0.8em;
 }
 
 div.codeblock > div.blockcontent {
-	background: #f6f6f6;
+    background: #f6f6f6;
 }
 
 span.pycommand {
-	color: #000070;
+    color: #000070;
 }
 
 span.statement {
-	color: #008800;
+    color: #008800;
 }
 span.builtin {
-	color: #000088;
+    color: #000088;
 }
 span.special {
-	color: #990000;
+    color: #990000;
 }
 span.operator {
-	color: #880000;
+    color: #880000;
 }
 span.error {
-	color: #aa0000;
+    color: #aa0000;
 }
 span.comment, span.comment > *, span.string, span.string > * {
-	color: #606060;
+    color: #606060;
 }
 
 @media print {
-	#layout-menu { display: none; }
+    #layout-menu { display: none; }
 }
 
 #fwtitle {
-	margin: 2px;
+    margin: 2px;
 }
 
 #fwtitle #toptitle {
-	padding-left: 0.5em;
-	margin-bottom: 0.5em;
+    padding-left: 0.5em;
+    margin-bottom: 0.5em;
 }
 
 #layout-content h1:first-child, #layout-content h2:first-child, #layout-content h3:first-child {
-	margin-top: -0.7em;
+    margin-top: -0.7em;
 }
 
 div#toptitle h1, #layout-content div#toptitle h1 {
-	margin-bottom: 0.0em;
-	padding-bottom: 0.1em;
-	padding-top: 0;
-	margin-top: 0.5em;
-	border-bottom: none;
+    margin-bottom: 0.0em;
+    padding-bottom: 0.1em;
+    padding-top: 0;
+    margin-top: 0.5em;
+    border-bottom: none;
 }
 
 img.eq {
-	padding: 0;
-	padding-left: 0.1em;
-	padding-right: 0.1em;
-	margin: 0;
+    padding: 0;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    margin: 0;
 }
 
 img.eqwl {
-	padding-left: 2em;
-	padding-top: 0.6em;
-	padding-bottom: 0.2em;
-	margin: 0;
+    padding-left: 2em;
+    padding-top: 0.6em;
+    padding-bottom: 0.2em;
+    margin: 0;
 }
 
 table {
@@ -368,4 +425,183 @@ img {
 table.imgtable, table.imgtable td {
     border: none;
     text-align: left;
+}
+
+
+
+.blockcontent {
+    padding: 25px;
+}
+
+/* 欢迎图片样式优化 */
+.welcome-img {
+    width: 75%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 25px;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* 研究方向列表样式 */
+.research-interests {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.research-interests li {
+    margin: 12px 0;
+    font-size: 1rem;
+    position: relative;
+    padding-left: 18px;
+}
+
+.research-interests li:before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #0275d8;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+/* 链接通用样式 */
+a {
+    color: #0275d8;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #014c8c;
+    border-bottom: 1px dotted #014c8c;
+}
+
+/* 招生指标醒目模块样式（保留原有基础，新增标色逻辑） */
+.admission-notice {
+    background-color: #f0f7ff; /* 浅蓝背景，烘托重要性 */
+    border-left: 4px solid #0275d8; /* 左侧粗边框，快速引导视线 */
+    padding: 1.2em;
+    margin: 1.5em 0;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* 轻微加深阴影，增强模块立体感 */
+}
+
+/* 招生指标标题：加粗+深主题色，比普通标题更醒目 */
+.quota-title {
+    font-size: 1.2em; /* 标题字号微增，提升层级 */
+    color: #022b6d; /* 深蓝色，比普通文字更重，突出“2026 Opening Quotas” */
+    margin-top: 0;
+    margin-bottom: 0.6em;
+    border-bottom: none;
+}
+
+/* 名额核心信息：标色+加粗，视觉优先级最高 */
+.quota-highlight {
+    color: #0275d8; /* 主题蓝，与页面风格统一且醒目 */
+    font-weight: 700; /* 加粗（比普通bold更重），让名额数字和类型一眼看清 */
+}
+
+/* 名额列表：调整间距，让标色内容更易区分 */
+.quota-list {
+    padding-left: 1.2em;
+    margin-bottom: 0;
+    line-height: 1.8; /* 增加行高，避免标色内容拥挤 */
+}
+
+.quota-list li {
+    margin: 0.5em 0; /* 增大列表项间距，每个名额独立清晰 */
+}
+
+/* 成员卡片网格布局：强制每行2个，间距均匀 */
+.members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px; /* 卡片之间的间距（横向+纵向） */
+    justify-content: space-between; /* 左右对齐，确保每行2个时间距均匀 */
+    margin-bottom: 40px;
+    margin-top: 15px;
+}
+
+/* 单个成员卡片：添加边框+固定宽度，确保每行2个 */
+.member-card {
+    width: calc(50% - 12.5px); /* 50%宽度 - 一半gap间距，确保每行刚好2个 */
+    min-width: 280px; /* 最小宽度，防止小屏幕下卡片过窄 */
+    background-color: #fff;
+    border: 1px solid #e1eaf1; /* 浅灰色小边框，清晰区分卡片 */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03); /* 轻微阴影，增强层次感 */
+    box-sizing: border-box; /* 确保padding和border不撑大卡片宽度 */
+    text-align: center; /* 卡片内所有内容居中，更规整 */
+}
+
+
+
+/* 成员姓名：调整样式，突出层级 */
+.member-card h3 {
+    color: #2c5282;
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 10px;
+    border-bottom: none; /* 取消h3默认下划线 */
+}
+
+/* 成员信息文本：统一样式 */
+.member-card p {
+    color: #444;
+    font-size: 0.95em;
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+/* 成员链接区域：调整间距 */
+.member-links {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center; /* 链接居中排列 */
+    gap: 15px; /* 链接之间的间距 */
+}
+
+/* 正常链接样式 */
+.member-links a {
+    color: #0275d8;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 4px; /* 图标与文字间距 */
+}
+
+.member-links a:hover {
+    color: #014c8c;
+    border-bottom: 1px dotted #014c8c;
+}
+
+/* 空链接（不可用）样式 */
+.member-links a.disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+/* 成员照片：固定360×490长方形，裁剪适配（不拉伸） */
+.member-photo {
+    width: 180px;    /* 固定宽度360px */
+    height: 245px;   /* 固定高度490px */
+    object-fit: cover; /* 核心属性：保持图片比例，裁剪超出部分（不拉伸） */
+    object-position: center; /* 裁剪时优先保留图片中心区域（可根据需求调整为top/bottom等） */
+    border: 1px solid #e1eaf1; /* 保留原边框，区分照片与卡片区分 */
+    border-radius: 4px; /* 轻微圆角，避免生硬直角（可选，可删除） */
+    display: block;
+    margin: 0 auto 18px; /* 照片居中，底部与姓名保持间距 */
+}
+
+/* 适配小屏幕：当屏幕宽度小于380px时，缩小照片尺寸（避免溢出） */
+@media (max-width: 380px) {
+    .member-photo {
+        width: 100%; /* 小屏幕下占满卡片宽度 */
+        height: auto; /* 高度自动按比例适配（避免窄屏时照片过高） */
+        max-height: 400px; /* 限制最大高度，防止超出屏幕 */
+    }
 }
